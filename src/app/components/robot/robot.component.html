@@ -1,0 +1,65 @@
+<ion-item>
+  <ion-label>X</ion-label>
+  <ion-select [(ngModel)]="x" placeholder="Select X">
+    <ion-select-option [value]=0>0</ion-select-option>
+    <ion-select-option [value]=1>1</ion-select-option>
+    <ion-select-option [value]=2>2</ion-select-option>
+    <ion-select-option [value]=3>3</ion-select-option>
+    <ion-select-option [value]=4>4</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label>Y</ion-label>
+  <ion-select [(ngModel)]="y" placeholder="Select Y">
+    <ion-select-option [value]=0>0</ion-select-option>
+    <ion-select-option [value]=1>1</ion-select-option>
+    <ion-select-option [value]=2>2</ion-select-option>
+    <ion-select-option [value]=3>3</ion-select-option>
+    <ion-select-option [value]=4>4</ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label>Direction</ion-label>
+  <ion-select [(ngModel)]="f" placeholder="Select Direction">
+    <ion-select-option value="north">North</ion-select-option>
+    <ion-select-option value="south">South</ion-select-option>
+    <ion-select-option value="west">West</ion-select-option>
+    <ion-select-option value="east">East</ion-select-option>
+  </ion-select>
+</ion-item>
+<div class="ion-padding">
+  <ion-button 
+    color="secondary" expand="block" size="small" 
+    (click)="onPlaceRobot()" 
+    >Place</ion-button>
+</div>
+<div class="container">
+  <div class="board">
+     <div #robot id="robot"></div>
+  </div>
+</div>
+<ion-button 
+  color="secondary" size="medium" 
+  (click)="onTurnLeft()"
+  [disabled]="!placed">
+  <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+</ion-button>
+<ion-button 
+  color="secondary" size="medium" 
+  (click)="onMove()"
+  [disabled]="!placed">
+  <ion-icon slot="icon-only" name="move"></ion-icon>
+</ion-button>
+<ion-button 
+  color="secondary" size="medium" 
+  (click)="onTurnRight()"
+  [disabled]="!placed">
+  <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+</ion-button>
+<div class="ion-padding">
+  <ion-button 
+  color="secondary" expand="block" size="small" 
+  (click)="onReport()"
+  [disabled]="!placed">Report</ion-button>
+</div>
+<div id="reportLog" #reportLog class="ion-​text-center"></div>

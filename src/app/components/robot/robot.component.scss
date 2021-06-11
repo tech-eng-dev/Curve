@@ -1,0 +1,49 @@
+#robot {
+  width: 20%;
+  height: 20%;
+  border-radius: 100%;
+  position: absolute;
+  display: none;
+}
+
+.container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  transform: translate(-125px, 0);
+}
+
+.board {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  background-image: -moz-linear-gradient(45deg, #a7c8ff 25%, transparent 25%, transparent 75%, #a7c8ff 75%, #a7c8ff 100%), -moz-linear-gradient(45deg, #a7c8ff 25%, transparent 25%, transparent 75%, #a7c8ff 75%, #a7c8ff 100%);
+  background-image: -webkit-linear-gradient(45deg, #a7c8ff 25%, transparent 25%, transparent 75%, #a7c8ff 75%, #a7c8ff 100%), -webkit-linear-gradient(45deg, #a7c8ff 25%, transparent 25%, transparent 75%, #a7c8ff 75%, #a7c8ff 100%);
+  -moz-background-size: 100px 100px;
+  background-size: 100px 100px;
+  -webkit-background-size: 100px 100px;
+  background-position: 0 0, 50px 50px;
+  border: 1px solid #a7c8ff;
+  border-radius: 4px;
+}
+
+.north {
+  background: url('../../../assets/svg/n.svg') no-repeat left top;
+  background-size: 100%;
+}
+
+.south {
+  background: url('../../../assets/svg/s.svg') no-repeat left top;
+  background-size: 100%;
+}
+
+.east {
+  background: url('../../../assets/svg/e.svg') no-repeat left top;
+  background-size: 100%;
+}
+
+.west {
+  background: url('../../../assets/svg/w.svg') no-repeat left top;
+  background-size: 100%;
+}
