@@ -32,31 +32,19 @@ scrolling log of the result
 * Any move that would cause the robot to fall must be ignored.
 * Example Input and Output:
     1. PLACE 0,0,NORTH
-    <br>
     MOVE
-    <br>
     REPORT
-    <br>
     Output: 0,1,NORTH
     1. PLACE 0,0,NORTH
-    <br>
     LEFT
-    <br>
     REPORT
-    <br>
     Output: 0,0,WEST
     1. PLACE 1,2,EAST
-    <br>
     MOVE
-    <br>
     MOVE
-    <br>
     LEFT
-    <br>
     MOVE
-    <br>
     REPORT
-    <br>
     Output: 3,3,NORTH
     
 ## Run the app
