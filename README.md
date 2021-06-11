@@ -32,7 +32,7 @@ scrolling log of the result
 * Any move that would cause the robot to fall must be ignored.
 * Example Input and Output:
     1. PLACE 0,0,NORTH
-    MOVE
+    <br>MOVE
     REPORT
     Output: 0,1,NORTH
     1. PLACE 0,0,NORTH
