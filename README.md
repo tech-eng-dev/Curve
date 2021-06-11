@@ -33,7 +33,7 @@ scrolling log of the result
 * Example Input and Output:
     1. PLACE 0,0,NORTH
     <br>MOVE
-    REPORT
+    <br>REPORT
     Output: 0,1,NORTH
     1. PLACE 0,0,NORTH
     LEFT
