@@ -34,18 +34,18 @@ scrolling log of the result
     1. PLACE 0,0,NORTH
     <br>MOVE
     <br>REPORT
-    Output: 0,1,NORTH
+    <br>Output: 0,1,NORTH
     1. PLACE 0,0,NORTH
-    LEFT
-    REPORT
-    Output: 0,0,WEST
+    <br>LEFT
+    <br>REPORT
+    <br>Output: 0,0,WEST
     1. PLACE 1,2,EAST
-    MOVE
-    MOVE
-    LEFT
-    MOVE
-    REPORT
-    Output: 3,3,NORTH
+    <br>MOVE
+    <br>MOVE
+    <br>LEFT
+    <br>MOVE
+    <br>REPORT
+    <br>Output: 3,3,NORTH
     
 ## Run the app
 #### Web
