@@ -21,10 +21,10 @@
 <ion-item>
   <ion-label>Direction</ion-label>
   <ion-select [(ngModel)]="f" placeholder="Select Direction">
-    <ion-select-option value="north">North</ion-select-option>
-    <ion-select-option value="south">South</ion-select-option>
-    <ion-select-option value="west">West</ion-select-option>
-    <ion-select-option value="east">East</ion-select-option>
+    <ion-select-option [value]="DirectionEnum.N">{{DirectionEnum.N}}</ion-select-option>
+    <ion-select-option [value]="DirectionEnum.S">{{DirectionEnum.S}}</ion-select-option>
+    <ion-select-option [value]="DirectionEnum.W">{{DirectionEnum.W}}</ion-select-option>
+    <ion-select-option [value]="DirectionEnum.E">{{DirectionEnum.E}}</ion-select-option>
   </ion-select>
 </ion-item>
 <div class="ion-padding">

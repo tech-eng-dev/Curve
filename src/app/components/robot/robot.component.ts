@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Direction } from '../../enums/direction.enum';
 
 @Component({
   selector: 'app-robot',
@@ -8,13 +9,14 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class RobotComponent implements OnInit {
   @ViewChild('robot', {static: true}) robotElement: ElementRef;
   @ViewChild('reportLog', {static: true}) reportLogElement: ElementRef;
+  DirectionEnum = Direction;
   public x: number = 0;
   public y: number = 0;
-  public f: string = 'north';
+  public f: string = this.DirectionEnum.N;
   public placed: boolean = false;
   private scale: number = 20;
   private total: number = this.scale * 4;
-  private dir: string[] = ['north', 'west', 'east', 'south'];
+  private dir: string[] = [this.DirectionEnum.N, this.DirectionEnum.S, this.DirectionEnum.E, this.DirectionEnum.W];
 
   constructor() { }
 
@@ -29,19 +31,19 @@ export class RobotComponent implements OnInit {
   }
 
   onTurnLeft() {
-    if(this.Board()) {
+    if(this.validate()) {
       switch(this.f) {
-        case 'north':
-          this.f = 'west';
+        case this.DirectionEnum.N:
+          this.f = this.DirectionEnum.W;
           break;
-        case 'west':
-          this.f = 'south';
+        case this.DirectionEnum.W:
+          this.f = this.DirectionEnum.S;
           break;
-        case 'south':
-          this.f = 'east';
+        case this.DirectionEnum.S:
+          this.f = this.DirectionEnum.E;
           break;
-        case 'east':
-          this.f = 'north';
+        case this.DirectionEnum.E:
+          this.f = this.DirectionEnum.N;
           break;
         default:
           break;
@@ -52,19 +54,19 @@ export class RobotComponent implements OnInit {
   }
 
   onTurnRight() {
-    if(this.Board()) {
+    if(this.validate()) {
       switch(this.f) {
-        case 'north':
-          this.f = 'east';
+        case this.DirectionEnum.N:
+          this.f = this.DirectionEnum.E;
           break;
-        case 'west':
-          this.f = 'north';
+        case this.DirectionEnum.W:
+          this.f = this.DirectionEnum.N;
           break;
-        case 'south':
-          this.f = 'west';
+        case this.DirectionEnum.S:
+          this.f = this.DirectionEnum.W;
           break;
-        case 'east':
-          this.f = 'south';
+        case this.DirectionEnum.E:
+          this.f = this.DirectionEnum.S;
           break;
         default:
           break;
@@ -75,27 +77,27 @@ export class RobotComponent implements OnInit {
   }
 
   onMove() {
-    if(this.Board()) {
+    if(this.validate()) {
       switch(this.f) {
-        case 'north':
+        case this.DirectionEnum.N:
           if(this.y < 4) {
             this.y++;
             this.robotElement.nativeElement.style.top = (this.total - this.y * this.scale) + '%';
           }
           break;
-        case 'south':
+        case this.DirectionEnum.S:
           if(this.y > 0) {
             this.y--;
             this.robotElement.nativeElement.style.top = (this.total - this.y * this.scale) + '%';
           }
           break;
-        case 'east':
+        case this.DirectionEnum.E:
           if(this.x < 4) {
             this.x++;
             this.robotElement.nativeElement.style.left = this.x * this.scale + '%';
           }
           break;
-        case 'west':
+        case this.DirectionEnum.W:
           if(this.x > 0) {
             this.x--;
             this.robotElement.nativeElement.style.left = this.x * this.scale + '%';
@@ -108,14 +110,14 @@ export class RobotComponent implements OnInit {
     }
   }
 
-  Board() {
+  validate() {
     if(this.dir.indexOf(this.f) === -1 || this.x < 0 || this.x > 4 || this.y < 0 || this.y > 4)
-        return false;
+      return false;
     return true;
   }
 
   onReport() {
-    this.reportLogElement.nativeElement.innerHTML = `Output: ${this.x}, ${this.y}, ${this.f.charAt(0).toUpperCase() + this.f.slice(1)}`;
+    this.reportLogElement.nativeElement.innerHTML = `Output: ${this.x}, ${this.y}, ${this.f}`;
   }
 
   clearReport() {
